@@ -8,6 +8,16 @@ def num_combinations(die_a, die_b):
     return len(die_a) * len(die_b)
 
 # Part-A Question 2
+def matrix_distribution(die_a, die_b):
+    matrix = []
+    for a in die_a:
+        row = []
+        for b in die_b:
+            row.append((a,b))
+        matrix.append(row)
+    return matrix
+
+# Part-A Question 3
 def sum_combinations(die_a, die_b):
     sums = dict()
     for a in die_a:
@@ -61,17 +71,16 @@ def undoom_dice(die_a, die_b):
 print("Total number of combinations are: ", num_combinations(die_a, die_b))
 
 # Part-A Question 2
-distribution = matrix_combinations(die_a, die_b)
+print("Matrix Distribution: ")
+distribution = matrix_distribution(die_a, die_b)
 for row in distribution:
     print(row)
-sums = sum_combinations(die_a, die_b)
-print("Sum distribution: ", sums)
 
 # Part-A Question 3
 probabilities = get_all_probabilities(die_a, die_b)
 print("Probabilities: ", probabilities)
 
-print('--------------------------------------------')
+print('---------------------------------------------------------------------------------------------------------------------')
 # Part-B
 new_die_a, new_die_b = undoom_dice(die_a, die_b)
 print("New die A: ", new_die_a)
